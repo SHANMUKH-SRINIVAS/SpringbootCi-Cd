@@ -22,7 +22,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t  saladishanmukh/zzzz-cicd:v1 .'
+                bat 'docker build -t  saladishanmukh/cicd:v1 .'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
                     passwordVariable: 'Shanmukh#123'
                 )]) {
                     bat 'docker login -u %shanmukhsrinivas47@gmail.com% -p %Shanmukh#123%'
-                    bat 'docker push saladishanmukh/zzzz-cicd:v1'
+                    bat 'docker push saladishanmukh/cicd:v1'
                 }
             }
         }

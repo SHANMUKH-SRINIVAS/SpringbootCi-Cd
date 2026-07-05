@@ -8,6 +8,6 @@ public class CICDController {
 
 	@GetMapping("/hello")
 	public String sayHello() {
-		return "Hello Shanmukh CI/CD has Triggered perfectly";
+		return "Hello Shanmukh CI/CD has Triggered perfectly shanmukh.";
 	}
 }

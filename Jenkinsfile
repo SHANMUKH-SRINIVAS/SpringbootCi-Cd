@@ -39,11 +39,20 @@ pipeline {
             }
         }
         
-        stage('Deploy to Kubernetes') {
-        steps {
-	        bat 'kubectl apply -f k8s/deployment.yaml'
-	        bat 'kubectl apply -f k8s/service.yaml'
+        stage('Deploy') {
+    steps {
+        bat '''
+        set KUBECONFIG=C:\\Users\\shanm\\.kube\\config
+
+        kubectl config current-context
+        kubectl get nodes
+        kubectl apply -f k8s\\deployment.yaml
+        kubectl apply -f k8s\\service.yaml
+        '''
     }
 }
+        
+       
+
     }
 }

@@ -16,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t  saladishanmukh/zzzz-cicd:v1 .'
+                bat 'docker build -t  saladishanmukh/zzzz-cicd:v1 .'
             }
         }
 
@@ -33,8 +33,8 @@ pipeline {
                     usernameVariable: 'shanmukhsrinivas47@gmail.com',
                     passwordVariable: 'Shanmukh#123'
                 )]) {
-                    sh 'docker login -u %shanmukhsrinivas47@gmail.com% -p %Shanmukh#123%'
-                    sh 'docker push saladishanmukh/zzzz-cicd:v1'
+                    bat 'docker login -u %shanmukhsrinivas47@gmail.com% -p %Shanmukh#123%'
+                    bat 'docker push saladishanmukh/zzzz-cicd:v1'
                 }
             }
         }
